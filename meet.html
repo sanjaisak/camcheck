@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>CAM_check</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+
+  <style>
+    #mt{
+      display: none;
+    }
+    #start{
+  display: block;
+  width: 100%;
+  height: 100vh;
+
+  background-size: cover; 
+    }
+    #mt  #jits{
+      background:rgba(255, 255, 255, 0.753);
+      padding: 20px;
+      border-radius: 20px;
+    }
+    #mt{
+      background:url("assets/img/lg.jpg") no-repeat;
+      background-size: cover;
+      margin-top: -13vh;
+    }
+    #mt h1{
+      font-size:60px ;
+      color:   black;
+    }
+    #mt  #meet{
+    background:rgba(255, 255, 255, 0.678);
+    border-radius: 30px;
+    height: 90%;
+    width: 100%;
+    padding: 30px;
+    color:black;
+    
+    }
+    #mt ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color:   black;
+    opacity: 1; /* Firefox */
+  }
+  
+  
+  #mt  #meet input{
+      background: rgba(255, 255, 255, 0) ;
+      color:  black;
+      border-bottom-color:  black;
+    }
+    #mt  output { 
+    position: absolute;
+    background-image: linear-gradient(#277dc4, #2e7dc7);
+    width: 40px; 
+    height: 30px; 
+    text-align: center; 
+    color:   black;
+    border-radius: 10px; 
+    display: inline-block; 
+    font: bold 15px/30px Georgia;
+    bottom: 175%;
+    left: 0;
+  }
+  #mt output:after { 
+    content: "";
+    position: absolute; 
+    width: 0;
+    height: 0;
+    border-top: 10px solid #3077d4;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    margin-top: -1px;
+  }
+  #mt  form { position: relative; margin:10px;   }
+  @media (max-width: 575.98px) { 
+
+
+   }
+
+  </style>
+
+
+</head>
+
+<body>
+<section id="start">
+  <!-- ======= Mobile nav toggle button ======= -->
+  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+  <!-- ======= Header ======= -->
+<!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+     
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 style="color: #ffffff;text-shadow:  0px 2px 1px rgba(255, 255, 255, 0.651);"><span style="color:  #ff1e00;text-shadow:  0px 0px 4px #eb6654b0;">CAM_</span>check</h1>
+        </div>
+        <div class="col-lg-6">
+          <div class="box">
+            <div class="color">
+              <br><br><br><br>
+              <center>
+                
+        <input type="text" placeholder="Meeting Name" id="meetname">
+        </center>
+
+            </div>
+            <div style="margin: auto; padding: 50px;">
+            <center >
+            <button type="button" class="btn btn-ligth btn-block" onclick="go()" >Launch</button>
+  
+            </center>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+   
+    
+    </div>
+  </section><!-- End Hero -->
+</section>
+<section id="mt">
+  
+  <!-- ======= Mobile nav toggle button ======= -->
+  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button> -->
+
+  <!-- ======= Header ======= -->
+ <!-- End Header -->
+
+ 
+
+
+    <div style="padding: 40px;">
+<div class="row">
+  <div class="col-lg-8">
+    <section>
+      <div class="container" id="jits" > 
+      </div>
+    </section>
+  </div>
+  <div   class="col-lg-3">
+<br><br>
+    <section id="meet" style="margin: auto;
+    width: 100%;">
+    
+      <br>
+      <br>
+      
+    
+      <div>
+      
+      <div  style="text-align: center;">
+        <h1>Monitor</h1>
+        <br><br>
+          <input type="text" style="border-top-style: none; border-right-style: none; border-left-style: none;width: 100%;outline: 0;" placeholder="Roll No" id="rollnum">
+          <br><br><br>
+          <input type="text" style="border-top-style: none; border-right-style: none; border-left-style: none;width: 100%; outline: 0;" placeholder="Student Name" id="studentname">
+          <br>   <br>   <br>
+      </div>
+      <p style="color:   black;">X - Axis</p>
+    
+      <button type="button" class="btn btn-success btn-block" onclick="start3()">Start</button>
+      <button type="button" class="btn btn-danger btn-block" onclick="stop3()">Stop</button>
+      <br>
+          <!-- <form>
+          <input type="range" id="inx" name="foo" min="0" max="180" style="width: 100%; " onclick="clickfnf()"> -->
+          <!-- <output for="foo"  id="inxvalue" onforminput="value = foo.valueAsNumber;" ></output>   not this line ......-->
+          <!-- <p style="text-align: center;padding: 5px;background-color: #277dc4;border-radius: 20px;" id="inxvalue" ></p>
+          </form> -->
+           <br>
+           <p style="color:   black;">Y - Axis</p>
+    
+          <form>
+            <input type="range" id="iny"  name="foo" min="0" max="180" style="width: 100%;" onclick="clickfnf()">
+            <!-- <output for="foo"   id="inyvalue" onforminput="value = foo.valueAsNumber;"></output> -->
+            <p style="text-align: center;padding: 5px;background-color: #277dc4;border-radius: 20px;" id="inyvalue" ></p>
+            </form>
+          
+          </div>
+          <br><br>
+          <button type="button" class="btn btn-primary btn-lg btn-block" onclick="clickfn()">View</button>
+          <script>
+         
+        
+          </script>
+      </section>
+  </div>
+</div>
+</div>
+
+</section>
+  <!-- End #main -->
+
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="https://meet.jit.si/external_api.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  
+
+  document.getElementById('start').style.background = "url(https://source.unsplash.com/random/"+ screen.width + "x" + screen.height+")  no-repeat";
+var x3=0;
+var a;
+var temp;
+var temprl;
+var temprl;
+var x;
+var state=2;
+var rolnum;
+var stuname;
+var opno=0;
+var once=0;
+
+function start3(){
+  x3=1;
+  clickfnf();
+}
+function stop3(){
+  x3=0;
+  clickfnf();
+}
+
+function   getmeetno(){
+  firebase.database().ref('Cam_check').on('value',(snap)=>{
+ opno = snap.child("meetno").val() ;
+// alert(opno);
+});
+
+}
+function setmeetno(){
+  ++opno;
+  once=opno;
+  firebase.database().ref("Cam_check").set({
+   meetno: opno
+   
+  }, function(error) {
+    if (error) {
+      console.log("error");
+      // alert("You are notconnected to " + opno +" succesfully, Thank You");
+      // The write failed...
+    } else {
+      // Data saved successfully!
+      console.log("no error");
+      
+      // alert("You are connected to " + opno +" succesfully, Thank You");
+    }
+  });
+  firebase.database().ref("no"+once).set({
+   meet: a,
+   link: "https://meet.jit.si/"+a
+   
+  }, function(error) {
+    if (error) {
+      console.log("error");
+      // alert("You are notconnected to " + opno +" succesfully, Thank You");
+      // The write failed...
+    } else {
+      // Data saved successfully!
+      console.log("no error");
+      
+      // alert("You are connected to " + opno +" succesfully, Thank You");
+    }
+  });
+}
+function go(){
+  firebase.database().ref('17EIR085').on('value',(snap)=>{
+ state = snap.child("inout").val() ;
+ if(state == 0){
+  alert("17EIR085 is out from vission");
+ }
+// alert(opno);
+});
+getmeetno();
+setTimeout(() => { setmeetno(); }, 3000);
+a = document.getElementById("meetname").value;
+x = document.getElementById("mt");
+y = document.getElementById("start");
+x.style.display = "block";
+y.style.display = "none"; 
+var domain = "meet.jit.si";
+var options = {
+    roomName: a,
+    width: "100%",
+    height: 700,
+    parentNode: document.querySelector('#jits'),
+    configOverwrite: {},
+    interfaceConfigOverwrite: {
+  
+    }
+}
+
+var api = new JitsiMeetExternalAPI(domain, options);
+
+}
+   
+var inxe;
+           var inye;
+            function modifyOffset() {
+              var el, newPoint, newPlace, offset, siblings, k;
+              width    = this.offsetWidth;
+              newPoint = (this.value - this.getAttribute("min")) / (this.getAttribute("max") - this.getAttribute("min"));
+              offset   = -1;
+              if (newPoint < 0) { newPlace = 0;  }
+              else if (newPoint > 1) { newPlace = width; }
+              else { newPlace = width * newPoint + offset; offset -= newPoint;}
+              siblings = this.parentNode.childNodes;
+              for (var i = 0; i < siblings.length; i++) {
+                  sibling = siblings[i];
+                  if (sibling.id == this.id) { k = true; }
+                  if ((k == true) && (sibling.nodeName == "OUTPUT")) {
+                      outputTag = sibling;
+                  }
+              }
+              outputTag.style.left       = newPlace + "px";
+              outputTag.style.marginLeft = offset + "%";
+              outputTag.innerHTML        = this.value;
+           
+   
+          }
+          
+          function modifyInputs() {
+              
+              var inputs = document.getElementsByTagName("input");
+              for (var i = 0; i < inputs.length; i++) {
+                  if (inputs[i].getAttribute("type") == "range") {
+                      inputs[i].onchange = modifyOffset;
+                      if ("fireEvent" in inputs[i]) {
+                          inputs[i].fireEvent("onchange");
+                      } else {
+                          var evt = document.createEvent("HTMLEvents");
+                          evt.initEvent("change", false, true);
+                          inputs[i].dispatchEvent(evt);
+                      }
+                  }
+              }
+          }
+          
+          modifyInputs();
+   
+  // inxe=document.getElementById("inx").value;      
+  inye=document.getElementById("iny").value;
+  // document.getElementById("inxvalue").innerHTML=50;
+  document.getElementById("inyvalue").innerHTML=50;     
+
+var firebaseConfig = {
+    apiKey: "AIzaSyDVhQIHtqycmNDb0dvsOQyfqHwCixCi5Kc",
+    authDomain: "camcheck-7e9e2.firebaseapp.com",
+    databaseURL: "https://camcheck-7e9e2.firebaseio.com",
+    projectId: "camcheck-7e9e2",
+    storageBucket: "camcheck-7e9e2.appspot.com",
+    messagingSenderId: "652111000693",
+    appId: "1:652111000693:web:90ac07146cb0ec3035343c",
+    measurementId: "G-00CGWZZBEX"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+
+      function clickfn() {
+     
+        temprl=document.getElementById("rollnum").value;
+rolnum=temprl.toUpperCase();
+tempst=document.getElementById("studentname").value;
+stuname=tempst.toUpperCase();
+console.log(stuname);
+// document.getElementById("inx").value=50;
+document.getElementById("iny").value=50;
+// document.getElementById("inxvalue").innerHTML=50;
+document.getElementById("inyvalue").innerHTML=50;
+firebase.database().ref("Cam_check/"+rolnum).set({
+     name: stuname,
+     roll_number: rolnum,
+     xaxis: x3,
+     yaxis: inye
+   
+  }, function(error) {
+    if (error) {
+      console.log("error");
+    
+      // The write failed...
+    } else {
+      // Data saved successfully!
+      console.log("no error");
+      alert("You are connected to " + rolnum +" succesfully, Thank You");
+      
+    }
+  });
+      }
+      firebase.database().ref("17EIR085").set({
+      inout: 1
+      
+     }, function(error) {
+       if (error) {
+         console.log("error");
+
+       } else {
+
+         console.log("no error");
+
+       }
+     });
+      function clickfnf() {
+        
+        temprl=document.getElementById("rollnum").value;
+rolnum=temprl.toUpperCase();
+tempst=document.getElementById("studentname").value;
+stuname=tempst.toUpperCase();
+console.log(stuname);
+// inxe=document.getElementById("inx").value;      
+inye=document.getElementById("iny").value;
+// document.getElementById("inxvalue").innerHTML=inx;
+document.getElementById("inyvalue").innerHTML=iny;
+// document.getElementById("inxvalue").innerHTML=inxe;
+document.getElementById("inyvalue").innerHTML=inye;
+        firebase.database().ref("Cam_check/"+rolnum).set({
+     name: stuname,
+     roll_number: rolnum,
+     xaxis: x3,
+     yaxis: inye
+   
+  }, function(error) {
+    if (error) {
+      console.log("error");
+    
+      // The write failed...
+    } else {
+      // Data saved successfully!
+      console.log("no error");
+    
+      
+    }
+  });
+      }
+      
+
+  </script>
+</body>
+
+</html>

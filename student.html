@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cam_check || Exam monitoring </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <style>
+        button{
+        margin: 0.9vw;
+        font-size: 2vw;
+        text-align: center;
+        background:rgba(156, 255, 169, 0.849);
+        padding: 1vw;
+        border: none;
+        border-radius: 5px;
+            box-shadow: 0px 0px 20px 0px rgba(152, 255, 175, 0.829);
+        }
+        body{
+            text-align: center;
+            margin:0vh ;
+        }
+        .container{
+            margin:0vh ; 
+        }
+        h1{
+            font-size: 3.5vw;
+            margin: 2.5vw;
+            text-align: center;
+            background: rgba(59, 188, 247, 0.671);
+            color: rgb(255, 255, 255);
+            width: 40%;
+            border-radius: 5px;
+            box-shadow: 0px 0px 6px 0px rgba(59, 188, 247, 0.596);
+        }
+
+        #jits{
+            width: 100%;
+            height: 100vh;
+            display: none;
+        }
+        iframe{
+            width: 100%;
+            height: 100%;
+        }
+        #ji {
+            position: absolute;
+            z-index: -4;
+        }
+        #listlink{
+            width: 100%;
+            height: 100%;
+            background: white; 
+            background-size: cover;
+            position: absolute;
+         
+        }
+        canvas {
+            z-index: -4;
+            position: absolute;
+    
+ 
+    }
+    video{
+        top:5;
+        left: 0;
+        z-index: -4;
+        position: absolute;
+    
+   
+    }
+    @media (max-width: 575.98px) { 
+        body{
+            text-align: center;
+            width: 100vh;
+        }
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        h1{
+
+            font-size: 8.5vw;
+            margin: 2.5vw;
+            text-align: center;
+            background: rgba(59, 188, 247, 0.671);
+            color: rgb(255, 255, 255);
+            width: 95%;
+            border-radius: 5px;
+            box-shadow: 0px 0px 6px 0px rgba(59, 188, 247, 0.596);
+        }
+        button{
+        margin: 2vw;
+        font-size: 5vw;
+        text-align: center;
+        background:rgba(156, 255, 169, 0.849);
+        padding: 1vw;
+        border: none;
+        border-radius: 5px;
+            box-shadow: 0px 0px 20px 0px rgba(152, 255, 175, 0.829);
+        }
+        #listlink{
+            width: 100%;
+            height: 200vh;
+            
+            background: url("https://source.unsplash.com/random/800x600"); 
+            background-size: cover;
+            position: absolute;
+        }
+        video{
+        z-index: -4;
+        top:5;
+        left: 0;
+      position: absolute;
+    }
+
+    #jits{
+            width: 100vw;
+            height: 100vh;
+           
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="containe">
+
+      
+        <div  id="listlink">
+            <h1>EXAMS ON GOING</h1>
+        </div>
+
+        <div  id="jits">
+            
+            <section id="ji">
+                <video id="video" width="100" height="100" autoplay muted></video>
+                <script defer src="face-api.min.js"></script>
+                <script defer src="script.js"></script>
+                
+                  </section>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+<script src="https://meet.jit.si/external_api.js"></script>
+    <script>
+  if(screen.width < 700){
+    document.getElementById("listlink").style.background = "url(https://source.unsplash.com/random/800x600)  no-repeat";
+  }else{
+            document.getElementById("listlink").style.background = "url(https://source.unsplash.com/random/"+ screen.width + "x" + screen.height+")  no-repeat";
+  }
+        var firebaseConfig = {
+    apiKey: "AIzaSyDVhQIHtqycmNDb0dvsOQyfqHwCixCi5Kc",
+    authDomain: "camcheck-7e9e2.firebaseapp.com",
+    databaseURL: "https://camcheck-7e9e2.firebaseio.com",
+    projectId: "camcheck-7e9e2",
+    storageBucket: "camcheck-7e9e2.appspot.com",
+    messagingSenderId: "652111000693",
+    appId: "1:652111000693:web:90ac07146cb0ec3035343c",
+    measurementId: "G-00CGWZZBEX"
+  };
+  
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  var opno;
+  var name1 = [];
+  var link1 = [];
+  var btn1 = [];
+  var txt1 = [];
+  var li1 = [];
+  var frm;
+  var fra = document.getElementById("jits");
+  var midv = document.getElementById("listlink");
+  firebase.database().ref('Cam_check').on('value',(snap)=>{
+ opno = snap.child("meetno").val() ;
+
+ setTimeout(() => { run(); }, 2000);
+});
+
+function run(){
+    
+for(var a=1; a <= opno; ++a)
+firebase.database().ref("no"+a).on('value',(snap)=>{
+ name1 [a] = snap.child("meet").val() ;
+ link1 [a] = snap.child("link").val() ;
+ console.log(name1 [a]);
+ console.log(link1 [a]);
+  btn1 [a] = document.createElement("BUTTON");
+  btn1 [a].innerHTML = name1 [a];
+  btn1 [a].onclick = function() {showall(name1 [a])} ;
+  midv.appendChild(btn1 [a]);
+});
+
+}
+function showall(way){
+    fra.style.display = "block";
+    midv.style.display = "none";
+//   frm = document.createElement("iframe");
+//   frm.src =  way;
+//  fra.appendChild(frm);
+    var domain = "meet.jit.si";
+    var options = {
+    roomName: way,
+    width: "100%",
+    height:"100%",
+    parentNode: document.querySelector('#jits'),
+    configOverwrite: {},
+    interfaceConfigOverwrite: {
+  
+    }
+}
+
+var api = new JitsiMeetExternalAPI(domain, options);
+
+}
+    </script>
+</body>
+</html>
